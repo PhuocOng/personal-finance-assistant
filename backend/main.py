@@ -28,7 +28,7 @@ app.add_middleware(
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
-llm = OpenAI(temperature=0, openai_api_key=OPENAI_API_KEY)
+llm = OpenAI(temperature=0, openai_api_key=OPENAI_API_KEY, max_tokens=700)
 qa_chain = load_qa_chain(llm, chain_type="stuff")
 
 model_name = "ProsusAI/finbert"
@@ -61,15 +61,38 @@ class Query(BaseModel):
 @app.post("/upload")
 async def upload_pdf(file: UploadFile = File(...)):
     global db, chunks
+
+    # Save uploaded file temporarily
     with NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
         tmp.write(await file.read())
         tmp_path = tmp.name
 
+    # Extract + chunk
     text = extract_text_from_pdf(tmp_path)
     chunks = chunk_text(text)
     db = FAISS.from_texts(chunks, embeddings)
 
-    return {"message": "PDF processed successfully", "chunks": len(chunks)}
+    # Prompt GPT to summarize
+    prompt = (
+        "You are a financial analyst assistant.\n"
+        "Based on the following financial report, summarize the key financial highlights and risks.\n"
+        "Here is the report content:\n\n"
+        + text[:4000]  # Truncate to fit token limit
+    )
+
+    try:
+        response = llm.invoke(prompt)
+        return {
+            "message": "PDF processed successfully",
+            "summary": response.strip(),
+            "chunks": len(chunks),
+        }
+    except Exception as e:
+        return {
+            "error": "Failed to get summary from GPT",
+            "details": str(e),
+            "chunks": len(chunks),
+        }
 
 @app.post("/ask")
 def ask_question(q: Query):

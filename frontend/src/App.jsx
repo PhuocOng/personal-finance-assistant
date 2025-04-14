@@ -11,9 +11,6 @@ function App() {
 
 
 
-
-
-
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
@@ -75,6 +72,39 @@ function App() {
     setMessages((prev) => [...prev, botMessage]);
   };
 
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file || file.type !== "application/pdf") return;
+  
+    const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const userMessage = { sender: 'user', text: `[Uploaded PDF: ${file.name}]`, time: now };
+    setMessages(prev => [...prev, userMessage]);
+    setIsTyping(true);
+  
+    const formData = new FormData();
+    formData.append("file", file);
+  
+    try {
+      const res = await fetch("http://localhost:8000/upload", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+  
+      const botMessage = {
+        sender: 'bot',
+        text: data.summary || "Received your file, but couldn't extract summary.",
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      };
+      setMessages(prev => [...prev, botMessage]);
+    } catch (err) {
+      setMessages(prev => [...prev, { sender: 'bot', text: "Upload failed 😢", time: now }]);
+    }
+  
+    setIsTyping(false);
+  };
+  
   
 
   return (
@@ -103,6 +133,11 @@ function App() {
         )}
 
         <div className="input-area">
+          <label className="upload-btn">
+            📎 Upload PDF
+            <input type="file" accept=".pdf" onChange={handleFileUpload} hidden />
+          </label>
+
           <input
             type="text"
             value={input}
@@ -112,6 +147,7 @@ function App() {
           />
           <button onClick={handleSend}>Send</button>
         </div>
+
       </div>
     </div>
   )
