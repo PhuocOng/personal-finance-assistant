@@ -6,12 +6,11 @@ from tempfile import NamedTemporaryFile
 import fitz  # PyMuPDF
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
-from langchain_community.llms import OpenAI
 import os
 from dotenv import load_dotenv
+from langchain_openai import OpenAIEmbeddings, OpenAI
+from langchain_community.vectorstores import FAISS
 load_dotenv()
 
 # -------- SETUP --------
