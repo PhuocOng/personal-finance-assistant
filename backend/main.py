@@ -4,7 +4,6 @@ from pydantic import BaseModel
 from typing import List
 from tempfile import NamedTemporaryFile
 import fitz  # PyMuPDF
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.question_answering import load_qa_chain
 import os
@@ -30,10 +29,7 @@ embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
 llm = OpenAI(temperature=0, openai_api_key=OPENAI_API_KEY, max_tokens=700)
 qa_chain = load_qa_chain(llm, chain_type="stuff")
 
-model_name = "ProsusAI/finbert"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSequenceClassification.from_pretrained(model_name)
-finbert_pipeline = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
+
 
 # -------- GLOBAL MEMORY --------
 db = None
