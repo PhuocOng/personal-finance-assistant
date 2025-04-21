@@ -97,11 +97,8 @@ def ask_question(q: Query):
     answer = qa_chain.run(input_documents=docs, question=q.query)
     return {"answer": answer}
 
-@app.post("/sentiment")
-def analyze_sentiment(q: Query):
-    result = finbert_pipeline(q.query)[0]
-    return {"label": result['label'], "score": result['score']}
 
 @app.get("/healthcheck")
 def healthcheck():
     return {"status": "ok"} 
+

@@ -10,3 +10,4 @@ langchain-openai
 faiss-cpu
 PyMuPDF==1.23.7
 httpx
+python-multipart
