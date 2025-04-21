@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic
+transformers
+torch
+langchain
+langchain-community
+langchain-openai
+faiss-cpu
+PyMuPDF==1.23.7
+httpx
