@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Navbar from './components/Navbar';
 
 
-function App() {
+function Chat() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const chatEndRef = useRef(null);
@@ -133,4 +133,4 @@ function App() {
   );
 }
 
-export default App;
+export default Chat;
