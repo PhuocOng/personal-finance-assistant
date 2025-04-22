@@ -1,0 +1,40 @@
+/* src/pages/Home.css */
+
+.home-section {
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e0e0e0;
+}
+  
+.home-content {
+    max-width: 800px;
+    background: rgba(30, 30, 30, 0.9);
+    padding: 3rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 255, 170, 0.08);
+    border: 1px solid #222;
+}
+  
+.home-content h1 {
+    font-size: 2.5rem;
+    color: #00ffaa;
+    margin-bottom: 1.5rem;
+}
+  
+.home-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+  
+.home-content .lead {
+    font-size: 1.25rem;
+    color: #e0e0e0;
+}
+  

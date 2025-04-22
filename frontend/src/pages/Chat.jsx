@@ -1,6 +1,5 @@
-import './App.css';
+import './Chat.css';
 import { useEffect, useRef, useState } from 'react';
-import Navbar from './components/Navbar';
 
 
 function Chat() {
@@ -91,7 +90,6 @@ function Chat() {
 
   return (
     <div className="container">
-      <Navbar />
       <div className="box">
         <div className="chat-history">
           {messages.map((msg, idx) => (
