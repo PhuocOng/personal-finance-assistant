@@ -6,7 +6,7 @@ function Achievements() {
     <section className="achievements-section">
       <div className="achievements-content">
         <h2>🚀 Achievements</h2>
-        <p className="subtitle">Milestones, wins, and progress we're proud of.</p>
+        <p className="subtitle">Milestones, wins, and progress we're proud of ewdoigbifwbqewuif.</p>
         <ul>
           <li>Integrated GPT-4 Turbo for real-time Q&A over PDF content</li>
           <li>Processes and summarizes financial reports up to 50+ pages</li>
