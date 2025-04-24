@@ -11,9 +11,9 @@ function Contact() {
           We'd love to hear from you.
         </p>
         <ul>
-          <li>📧 Email: financeai@myproject.com</li>
-          <li>🐦 Twitter: <a href="https://twitter.com/financeai" target="_blank" rel="noreferrer">@financeai</a></li>
-          <li>🌐 Website: <a href="https://www.financeai.io" target="_blank" rel="noreferrer">www.financeai.io</a></li>
+          <li>📧 Email: peterong.gp@gmail.com</li>
+          <li>🌐 Website:&nbsp;<a href="https://peter208.com/" target="_blank" rel="noreferrer">peter208.com</a></li>
+
         </ul>
       </div>
     </section>

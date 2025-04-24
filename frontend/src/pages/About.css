@@ -1,35 +1,86 @@
-/* src/pages/About.css */
-
 .about-section {
     background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
     color: #e0e0e0;
     display: flex;
     align-items: center;
-    padding: 3rem 1rem;
-    height: 100vh;
+    justify-content: center;
+    position: relative;
+    padding: 6rem 1rem;
+    min-height: 100vh;
+    overflow: hidden;
   }
   
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(30, 30, 30, 0.9);
-    padding: 2.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 255, 170, 0.05);
+  .about-background {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1614064641938-3bbee52942b1?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+    opacity: 0.08;
+    z-index: 0;
+    filter: blur(4px);
+  }
+  
+  .about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    background: rgba(30, 30, 30, 0.95);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 40px rgba(0, 255, 170, 0.08);
     border: 1px solid #222;
-}
+    backdrop-filter: blur(4px);
+  }
   
-.about-content h2 {
+  .about-content h2 {
     color: #00ffaa;
-    font-weight: 700;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    font-size: 2rem;
-}
+  }
   
-.about-content p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 1rem;
+  .about-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
     color: #ccc;
-}
+  }
+  
+  .tech-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tech-badge {
+    background-color: #00ffaa22;
+    color: #00ffaa;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid #00ffaa44;
+    transition: background 0.2s ease;
+  }
+  
+  .tech-badge:hover {
+    background-color: #00ffaa44;
+  }
+  
+  .about-image {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .about-image img {
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 255, 170, 0.1);
+  }
+  
+  .caption {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: #aaa;
+  }
   
