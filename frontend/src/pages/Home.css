@@ -1,7 +1,6 @@
 /* src/pages/Home.css */
 
 .home-section {
-    min-height: 100vh;
     padding: 4rem 1rem;
     background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
     display: flex;

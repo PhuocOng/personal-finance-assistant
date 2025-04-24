@@ -1,57 +1,56 @@
 /* src/pages/Contact.css */
 
 .contact-section {
-    min-height: 100vh;
     padding: 4rem 1rem;
     background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #e0e0e0;
-  }
+}
   
-  .contact-content {
+.contact-content {
     max-width: 700px;
     background: rgba(30, 30, 30, 0.9);
     padding: 2.5rem;
     border-radius: 1rem;
     box-shadow: 0 4px 20px rgba(0, 255, 170, 0.07);
     border: 1px solid #222;
-  }
+}
   
-  .contact-content h2 {
+.contact-content h2 {
     color: #00ffaa;
     font-weight: 700;
     margin-bottom: 1.5rem;
     font-size: 2rem;
-  }
+}
   
-  .contact-content p {
+.contact-content p {
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 1.5rem;
     color: #ccc;
-  }
+}
   
-  .contact-content ul {
+.contact-content ul {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
+}
   
-  .contact-content li {
+.contact-content li {
     padding: 0.5rem 0;
     font-size: 1.05rem;
     display: flex;
     align-items: center;
-  }
+}
   
-  .contact-content a {
+.contact-content a {
     color: #00ffaa;
     text-decoration: none;
-  }
+}
   
-  .contact-content a:hover {
+.contact-content a:hover {
     text-decoration: underline;
-  }
+}
   
