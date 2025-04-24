@@ -1,39 +1,100 @@
-/* src/pages/Home.css */
 
 .home-section {
-    padding: 4rem 1rem;
+    margin-top: 3rem;
     background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #e0e0e0;
 }
-  
-.home-content {
-    max-width: 800px;
+
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.home-text {
     background: rgba(30, 30, 30, 0.9);
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 1rem;
-    text-align: center;
     box-shadow: 0 8px 24px rgba(0, 255, 170, 0.08);
     border: 1px solid #222;
 }
-  
-.home-content h1 {
-    font-size: 2.5rem;
+
+.home-text h1 {
+    font-size: 2.75rem;
     color: #00ffaa;
-    margin-bottom: 1.5rem;
-}
-  
-.home-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
     margin-bottom: 1rem;
-    color: #ccc;
 }
-  
-.home-content .lead {
-    font-size: 1.25rem;
+
+.home-text .lead {
+    font-size: 1.3rem;
     color: #e0e0e0;
+    margin-bottom: 1rem;
 }
-  
+
+.home-text p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #00ffaa;
+    color: #0d0d0d;
+    border: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #00e6cc;
+}
+
+.home-image img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 255, 170, 0.1);
+}
+
+.story-block,
+.testimonial-block {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.story-block h2,
+.testimonial-block h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00ffaa;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid #222;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 255, 170, 0.05);
+}
+
+.testimonial h3 {
+    color: #00ffaa;
+    margin-bottom: 0.5rem;
+}

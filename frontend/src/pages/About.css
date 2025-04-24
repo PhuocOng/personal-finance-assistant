@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     padding: 3rem 1rem;
+    height: 100vh;
   }
   
 .about-content {
