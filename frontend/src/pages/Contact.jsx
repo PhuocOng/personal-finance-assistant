@@ -8,7 +8,7 @@ function Contact() {
         <h2>Contact Us</h2>
         <p>
           Got feedback, feature requests, or questions?
-          We'd love to hear from you!
+          We'd love to hear from you!!
         </p>
         <ul>
           <li>📧 Email: peterong.gp@gmail.com</li>
